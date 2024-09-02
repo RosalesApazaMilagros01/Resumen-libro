@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen Interactivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            background-image: url('https://png.pngtree.com/background/20220726/original/pngtree-abstract-pastel-colorful-gradient-background-concept-for-your-graphic-design-picture-image_1823047.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+        }
+        header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+div{
+    width: 80%;
+    margin:0 auto;
+}
+header h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5em;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgb(98, 0, 255);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+        .main {
+            float: right;
+            max-width: 50%;
+        }
+        .table {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+        .table .cell {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, z-index 0.3s ease;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+        .table .cell img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .table .cell .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.212);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .table .cell.active .overlay {
+            opacity: 0;
+        }
+        .table .cell:hover {
+            z-index: 2;
+            transform: scale(1.1);
+        }
+        .table .cell:hover img {
+            transform: scale(1.2);
+        }
+        .table .cell:hover ~ .cell {
+            transform: scale(0.9);
+        }
+
+
+        main {
+            padding: 2rem;
+            max-width: 50%;
+            justify-content: right;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .card {
+          justify-content: right;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            transition: transform 0.3s ease;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .card .content {
+            padding: 1rem;
+        }
+        .card .content h2 {
+            margin: 0;
+        }
+        .card.active img {
+            display: block;
+        }
+        .card.active .content {
+            display: none;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        header span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+    color: #ddd;
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+header h1 span:nth-child(1) { animation-delay: 0.1s; }
+header h1 span:nth-child(2) { animation-delay: 0.2s; }
+header h1 span:nth-child(3) { animation-delay: 0.3s; }
+header h1 span:nth-child(4) { animation-delay: 0.4s; }
+header h1 span:nth-child(5) { animation-delay: 0.5s; }
+header h1 span:nth-child(6) { animation-delay: 0.6s; }
+header h1 span:nth-child(7) { animation-delay: 0.7s; }
+header h1 span:nth-child(8) { animation-delay: 0.8s; }
+header h1 span:nth-child(9) { animation-delay: 0.9s; }
+header h1 span:nth-child(10) { animation-delay: 1s; }
+    </style>
+</head>
+<body>
+    <header>
+        <span>R</span>
+        <span>e</span>
+        <span>s</span>
+        <span>u</span>
+        <span>m</span>
+        <span>e</span>
+        <span>n</span>     <h1> Interactivo de Producción Audiovisual</h1>
+    </header>
+
+    <div>  <main class="main">
+        <div class="table">
+            <div class="cell" onclick="toggleOverlay(this)">
+                <img src="https://marcalima.pe/wp-content/uploads/2021/11/1-1-1.jpg.webp" alt="Imagen 1">
+            </div>
+            <div class="cell" onclick="toggleOverlay(this)">
+                <img src="https://grupoaudiovisual.com/wp-content/uploads/2020/05/Que-es-la-produccion-audiovisual-video-para-empresas-grupoaudiovisual-01.jpg" alt="Imagen 2">
+           </div>
+            <div class="cell" onclick="toggleOverlay(this)">
+                <img src="https://yumagic.com/wp-content/uploads/2022/03/Como-trabajamos-Yumagic-Media.png" alt="Imagen 3">
+        </div>
+        <div class="cell" onclick="toggleOverlay(this)">
+            <img src="https://i.ytimg.com/vi/np9JbgfByvg/maxresdefault.jpg" alt="Imagen 1">
+        </div>
+        <div class="cell" onclick="toggleOverlay(this)">
+            <img src="https://thumbnails.genially.com/5f7bd86a3d17330f42f5ddf2/pdf/a1889aa2-6280-41e1-ad99-5251d5a12ba4.png" alt="Imagen 2">
+       </div>
+        <div class="cell" onclick="toggleOverlay(this)">
+            <img src="https://0701.static.prezi.com/preview/v2/zm2s3nbtxnzemlm6eivylm6phx6jc3sachvcdoaizecfr3dnitcq_3_0.png" alt="Imagen 3">
+    </div>
+    <div class="cell" onclick="toggleOverlay(this)">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiK9XNDioLPkn71E_sbtoJuMfqaOlET8o6p-aPlfSK-ZKC74YQ4ueMSHcI3CUhZR0Eu88kDqh7FEQbxy3IMAiqq3gFdAEVI6cet6LhF270QBtOz7teB2Upy7MDogap08h2RK4wgu05Jzq3V/s1600/Esquema+produccio%25CC%2581n.jpg" alt="Imagen 3">
+</div>
+
+           
+            <!-- Agrega más celdas según sea necesario -->
+        </div>
+    </main>
+    <main>
+        <div class="card-container">
+            <div class="card" onclick="toggleCard(this)">
+                <div class="content">
+                    <h2>PRECEDENTES Y EVOLUCIÓN</h2>
+                    <h2>Página 21: Rol del Realizador</h2>
+                    <p>La sección inicial aborda el rol del realizador o director en la producción audiovisual. Se subraya que el director es el principal responsable de la visión artística y técnica del proyecto. Esta función implica la toma de decisiones cruciales relacionadas con la narrativa, el estilo visual y la ejecución técnica. El director debe asegurar que todas las decisiones creativas, desde la interpretación de los actores hasta los aspectos visuales, estén alineadas con el concepto general del proyecto. Además, el realizador coordina y supervisa a todos los miembros del equipo, desde el equipo técnico hasta el reparto, para garantizar que todos trabajen hacia el mismo objetivo artístico.</p>
+                    <span class="instructions">Haz clic para ver la imagen</span>
+                </div>
+                <img src="https://maiafilms.pe/wp-content/uploads/2021/03/23232.jpg" alt="Rol del Realizador">
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="content">
+                <h2>Nacimiento del Cine</h2>
+                <p>
+                  El cine, como fenómeno cultural y tecnológico, surge a finales del siglo XIX gracias a una serie de avances en la captura y reproducción de imágenes en movimiento. Inventores como Thomas Edison, con su kinetoscopio, y los hermanos Lumière, con su cinematógrafo, jugaron roles fundamentales en esta evolución. Estos desarrollos marcaron el inicio del cine como un medio de comunicación visual, permitiendo la proyección de imágenes en secuencia para el entretenimiento y la educación de las masas.
+                </p>
+            </div>
+            <img src="https://thumbnails.genially.com/5cf91886aa12c60ffabbefb8/screenshots/e81b533c-8759-49ac-b5af-8cecf3505fe8.jpg" alt="Fase de Preproducción">
+        </div>
+
+        <div class="card" onclick="toggleCard(this)">
+            <div class="content">
+            <h2>El Nacimiento de un fenómeno</h2>
+            <p>
+                Para entender el "nacimiento de un fenómeno" en el contexto del cine, este término se refiere a cómo el cine se estableció como un medio cultural y tecnológico. A partir de innovaciones técnicas y descubrimientos en la imagen en movimiento, el cine se convirtió en un nuevo fenómeno de comunicación y entretenimiento. Este desarrollo se atribuye a inventores como Thomas Edison y los hermanos Lumière, quienes transformaron la simple proyección de imágenes en un medio dinámico que revolucionó la cultura y la tecnología.   </p>
+        </div>
+        <img src="https://thumbnails.genially.com/5cf91886aa12c60ffabbefb8/screenshots/e81b533c-8759-49ac-b5af-8cecf3505fe8.jpg" alt="Fase de Preproducción">
+    </div>
+              
+
+
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="content">
+                    <h2>Página 22: Fase de Preproducción</h2>
+                    <p>Aquí se introduce la fase de preproducción como una etapa esencial para el éxito del proyecto. La preproducción abarca la preparación detallada antes del rodaje, comenzando con el desarrollo del guion. El guion debe ser sólido, bien estructurado y reflejar claramente la historia que se desea contar. Esta fase también incluye la elaboración de un plan de rodaje, que es un cronograma detallado que organiza las sesiones de filmación, la asignación de recursos y la logística. La selección del equipo técnico (como el director de fotografía, el diseñador de producción, etc.) y artístico (actores, extras, etc.) también se realiza en esta etapa, asegurando que cada miembro tenga claras sus responsabilidades y esté preparado para el rodaje.</p>
+                    <span class="instructions">Haz clic para ver la imagen</span>
+                </div>
+                <img src="https://thumbnails.genially.com/65001a41a2684c00124c5120/screenshots/f7f4e384-b836-441e-b484-a538cbd2f50a.jpg" alt="Fase de Preproducción">
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="content">
+                    <h2>Página 23: Planificación en la Preproducción</h2>
+                    <p>La planificación minuciosa durante la preproducción se destaca como clave para una producción eficiente. El texto enfatiza que una buena planificación ayuda a prever posibles problemas y a gestionar los recursos de manera eficaz. Esto incluye la coordinación de fechas de rodaje, la gestión del presupuesto, y la organización de los aspectos logísticos, como el alquiler de equipos y la ubicación de los sets. Una preproducción bien ejecutada minimiza los riesgos de retrasos y problemas durante la filmación, facilitando un rodaje más fluido y menos propenso a contratiempos.</p>
+                    <span class="instructions">Haz clic para ver la imagen</span>
+                </div>
+                <img src="https://estudiarperiodismoonline.com/wp-content/uploads/2024/05/Etapas-de-Produccion-Audiovisual.jpg.webp" alt="Planificación en la Preproducción">
+            </div>
+
+            <div class="card" onclick="toggleCard(this)">
+                <div class="content">
+                    <h2>Páginas 24-25: Papel del Guionista</h2>
+                    <p>En estas páginas, se discute el papel del guionista en la creación del proyecto audiovisual. Se detalla cómo el guionista debe desarrollar un guion que no solo sea coherente y atractivo, sino que también sirva como guía clara para el director y el equipo durante la producción. El guion debe contener detalles específicos sobre la trama, los diálogos y la estructura narrativa, proporcionando una base sólida para la realización del proyecto. La calidad del guion influye directamente en la eficacia de la preproducción, ya que un guion bien escrito facilita la planificación y ejecución del rodaje.</p>
+                    <span class="instructions">Haz clic para ver la imagen</span>
+                </div>
+                <img src="https://35mm.es/wp-content/uploads/2023/03/que-estudiar-para-ser-guionista.jpg.webp" alt="Papel del Guionista">
+            </div>
+        </div>
+    </main>
+</div>
+  
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
